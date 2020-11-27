@@ -12,8 +12,7 @@
           <h1 class="display-4 mb-4">
             Property Searching Just Got So Easy
           </h1>
-          <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae quas, asperiores eveniet vel nostrum magnam
-            voluptatum tempore! Consectetur, id commodi!</p>
+          <p class="lead">Search for the property according to your desired parameters. The advance search lets you filter properties based on following parameters.</p>
           <div class="search">
             <form action="{% url 'search'%}">
               <!-- Form Row 1 -->
@@ -76,16 +75,18 @@
       </div>
     </div>
   </section>
-  <br>
-<center>
-  <div>
+<br>
+{% include 'partials/_alerts.html' %}
+  <section id="work" class="bg-dark text-white text-center">
+    <h2 class="display-4">ML in the Cloud&nbsp;<i class="fa fa-cloud" aria-hidden="true"></i></h2>
+    <h4>Our ML model are embedded in the cloud which provide a great experience to predict the best possible price for your desired property.</h4><h5>Click on the button below to predict price for real estate.</h5>
+    <hr>
+    <a href= 'predict' class="btn btn-secondary text-white btn-lg">Predict Price</a>
+  </section>
 
     
-<a href='predict'>
-    <button  type="button" class="btn btn-outline-primary" >Predict Price</button></a>
-  </div></center>
 
-{% include 'partials/_alerts.html' %}
+
   <!-- Listings -->
   <section id="listings" class="py-5">
     <div class="container">
@@ -151,23 +152,20 @@
         <div class="col-md-4">
           <i class="fas fa-comment fa-4x mr-4"></i>
           <hr>
-          <h3>Consulting Services</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
+          <h3>Contact Us</h3>
+          <p>All the queries regarding buying and selling of properties will be entertained by our team within 24 hrs.</p>
         </div>
         <div class="col-md-4">
           <i class="fas fa-home fa-4x mr-4"></i>
           <hr>
           <h3>Propery Management</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
+          <p>Post ad for your property and sell to a wider set of audience on our platform and also search for the best option for real estate.</p>
         </div>
         <div class="col-md-4">
-          <i class="fas fa-suitcase fa-4x mr-4"></i>
+          <i class="fas fa-cloud fa-4x mr-4"></i>
           <hr>
-          <h3>Renting & Selling</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae, provident iste consequatur
-            hic dignissimos ratione ea quae.</p>
+          <h3>ML in the Cloud</h3>
+          <p>Our ML model are embedded in the cloud which provide a great experience to predict the best possible price for your desired property.</p>
         </div>
       </div>
     </div>

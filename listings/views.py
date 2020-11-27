@@ -84,25 +84,36 @@ def predict(request):
 		bhk=request.POST['bhk']
 		bath=request.POST['bath']
 		total_sqft=request.POST['total_sqft']
+		print(location)
 		params={'location':location,
 				'bhk':bhk,
 				'bath':bath,
 				'total_sqft':total_sqft
 				}
 		res=requests.post('https://realestate-restapi.herokuapp.com/predict_home_price',data=params)
+		print(params)
 		print(res.status_code)
 		if res.status_code==200:
 			data=res.json()
 			return render(request,'predict.html',{
 					'price': data['estimated_price'],
-					'values':request.GET
+					'location':"ashray",
+					'bhk':bhk,
+					'bath':bath,
+					'total_sqft':total_sqft
 				})
 
 		else:
 			return render(request,'predict.html',{
-				'values':request.GET
+					'location':location,
+					'bhk':bhk,
+					'bath':bath,
+					'total_sqft':total_sqft
 				})
 	else:
 		return render(request,'predict.html',{
-				'values':request.GET
+					'location':location,
+					'bhk':bhk,
+					'bath':bath,
+					'total_sqft':total_sqft
 				})

@@ -43,10 +43,12 @@
 
 <a href="{% url 'post'%}" class="btn btn-info" role="button">Post New Ad &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
 <!-- <button type="button" class="btn btn-info">Button</button> -->&nbsp;&nbsp;
-<a href="{% url 'dashboard'%}" class="btn btn-dark" role="button">Edit Profile &nbsp;<i class="fas fa-pen" aria-hidden="true"></i></a>
+<a href="{% url 'edit_profile' user.id%}" class="btn btn-info" role="button">Edit Profile &nbsp;<i class="fas fa-pen" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'edit_profile' user.id%}" class="btn btn-info" role="button">Forgot Password &nbsp;<i class="fas fa-pen" aria-hidden="true"></i></a>
      <br><br> <bold><hr style="border: 1.5px solid black;"></bold>  <h3>Your Ads: </h3>
     <section id="listings" class="py-4">
     <div class="container">
+
       <div class="row">
          {% if listings %}
 
@@ -84,7 +86,13 @@
                           <i class="fas fa-clock"></i> {{listing.list_date | timesince}} </div>
                       </div>
                       <hr>
-                      <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info</a>
+                      <a href="{% url 'listing' listing.id %}" class="btn btn-primary btn-block">More Info  &nbsp;&nbsp;&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                      <br>
+                      <a href="{% url 'delete_list' listing.id %}" class="btn btn-danger ">Delete Listing&nbsp;&nbsp; <i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                      <a href="{% url 'edit_listing' listing.id %}" class="btn btn-info ">Edit Listing  &nbsp;&nbsp;   <i class="fas fa-pen" aria-hidden="true"></i></a>
+
+                    <!-- <a class="btn btn-outline-danger" href="">Delete Listing<i class="fa fa-times" aria-hidden="true"></i></a> -->
                     </div>
                   </div>
                 </div>

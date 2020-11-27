@@ -1,0 +1,93 @@
+{%extends 'base.html'%}
+
+
+
+{% load static %}
+
+
+{% block content %}
+
+
+    <section id="bc" class="mt-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{%url 'dashboard'%}">
+              <i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Edit Post</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+     <div class="col-md-6 offset-md-3 mt-5">
+         <form accept-charset="UTF-8" action="{% url 'dashboard'%}" >
+          
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputName">House No.</label>
+            <input type="text" name="address" value="{{list.address}}" class="form-control" id="exampleInputName"  required="required">
+          </div>
+          <div class="form-group">
+            <!-- <label for="exampleInputName">Location</label> -->
+             <label >Location</label>
+                  <!-- <input type="text" name="city" class="form-control" placeholder="City"> -->
+                 <select name="city" class="form-control"  required=True>
+                    <option selected="true" value="{{list.city}}">Select location </option>
+                    {%for values in locations %}
+                     <option value="{{values}}">{{values}}</option>
+                    {%endfor%}
+                    
+                  </select>
+            <!-- <input type="text" name="city" class="form-control" id="exampleInputName"  required="required"> -->
+          </div>
+          <div class="form-group">
+            <label  >City</label>
+                  <select name="state" class="form-control">
+                    <option selected="true" values="{{list.state}}">Select City</option>
+                    {%for key,value in state_choices.items %}
+                     <option value="{{key}}">{{value}}</option>
+                    {%endfor%}
+                    
+                  </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">Zipcode</label>
+            <input type="number" name="zipcode" class="form-control" id="exampleInputName" value="{{list.zipcode}}" required="required">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">Price</label>
+            <input type="number" name="price"  value="{{list.price}}" class="form-control" id="exampleInputName" required="required">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">BedRoom</label>
+            <input type="number" name="bedrooms" class="form-control" id="exampleInputName" value="{{list.bedrooms}}" required="required">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">Bathrooms</label>
+            <input type="number" name="bathrooms" value="{{list.bathrooms}}" class="form-control" id="exampleInputName"required="required">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">Garage</label>
+            <input type="number" name="garage" value="{{list.garage}}" class="form-control" id="exampleInputName"  required="required">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">Living Area (sqft)</label>
+            <input type="number" name="sqft" value="{{list.sqft}}" class="form-control" id="exampleInputName"  required="required">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName">Lot Size (sqft)</label>
+            <input type="number" value="{{list.lot_size}}" name="lot_size" class="form-control" id="exampleInputName"  required="required">
+          </div>
+                    <br>
+          <center>
+          <button type="submit" class="btn btn-primary">Apply Changes</button>
+        </center>
+        <br>
+        </form>
+    </div> 
+    
+    
+
+{%endblock%}
