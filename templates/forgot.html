@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} | Register Account {% endblock %}
+
+{% block content %}
+    <section id="bc" class="mt-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{%url 'dashboard'%}">
+              <i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active"> Forgot Password </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+<section id="register" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h4>
+                <i class="fas fa-user-plus"></i> Forgot Password</h4>
+            </div>
+            <div class="card-body">
+              <!-- Alerts -->
+              {% include 'partials/_alerts.html' %}
+              <form action="{% url 'dashboard' %}"  >
+                  {% csrf_token %}
+                  
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" placeholder="Enter Registered Email" class="form-control" >
+                </div>
+                <center>OR</center>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="number" name="phone" placeholder="Enter Mobile Number" class="form-control" >
+                </div>
+               
+                
+                <input type="submit" class="btn btn-secondary btn-block">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

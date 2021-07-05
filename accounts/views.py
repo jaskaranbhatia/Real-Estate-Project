@@ -155,3 +155,5 @@ def edit_listing(request,list_id):
 		'locations':locations,
 		'state_choices':state_choices
 		})
+def forgot(request):
+	return render(request,'forgot.html')

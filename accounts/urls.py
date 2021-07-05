@@ -10,7 +10,8 @@ urlpatterns = [
  	path('delete/<int:list_id>', views.delete, name='delete'),
  	path('delete_list/<int:list_id>', views.delete_list, name='delete_list'),
  	path('edit_profile/<int:user_id>', views.edit_profile, name='edit_profile'),
- 	path('edit_listing/<int:list_id>', views.edit_listing, name='edit_listing')
+ 	path('edit_listing/<int:list_id>', views.edit_listing, name='edit_listing'),
+    path('forgot', views.forgot, name='forgot')
        
 ]
 
